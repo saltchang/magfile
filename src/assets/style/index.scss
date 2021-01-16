@@ -1,0 +1,27 @@
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@5.2/distr/fira_code.css);
+
+:root {
+  --code-font-family: 'Fira Code', source-code-pro, Menlo, Monaco, Consolas,
+    'Courier New', monospace;
+  --code-font-family-supports: 'Fira Code VF', 'Fira Code', source-code-pro,
+    Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: var(--code-font-family);
+}
+
+@supports (font-variation-settings: normal) {
+  code {
+    font-family: var(--code-font-family-supports);
+  }
+}

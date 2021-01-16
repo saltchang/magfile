@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import './App.css';
+import './assets/style/App.scss';
 import TypingMotionText from './components/TiypingMotionText/index';
 
 function App() {

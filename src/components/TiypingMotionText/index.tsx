@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { string, bool, arrayOf } from 'prop-types';
 
-import './style.css';
+import './style.scss';
 
 const TypingMotionText = ({
   withTag,
