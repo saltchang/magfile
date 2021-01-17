@@ -1,0 +1,32 @@
+.typing-motion-text-demo-page {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #112421;
+}
+
+.base-text-input {
+  font-family: 'Courier Prime', monospace;
+  font-size: 14px;
+  box-sizing: border-box;
+  padding: 4px;
+  width: 240px;
+  margin-bottom: 20px;
+  color: #3f3f3f;
+}
+
+.strings-input-textarea {
+  font-family: 'Courier Prime', monospace;
+  box-sizing: border-box;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  font-size: 14px;
+  padding: 4px;
+  height: 80px;
+  width: 240px;
+  color: #3f3f3f;
+}
