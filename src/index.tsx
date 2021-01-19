@@ -1,10 +1,12 @@
+import './declarations/index.d';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import './assets/style/index.scss';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './styles/main.scss';
+import App from './views/App';
+import reportWebVitals from './services/reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>

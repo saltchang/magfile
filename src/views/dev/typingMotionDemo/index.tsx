@@ -1,32 +1,31 @@
 import React, { useEffect, useState, useCallback } from 'react';
 
-import TypingMotionText from '../../../components/TiypingMotionText';
-import './style.scss';
+import TypingMotion from '../../../components/TypingMotion';
+import './typingMotionDemo.scss';
 
-function TypingMotionTextDemoPage() {
+const TypingMotionDemoPage = () => {
+  const getStringList = (str: string): string[] => {
+    return str.split('\n').filter((value: string) => !!value);
+  };
+  const defaultStrings = `a software engineer.\na web developer.\na mobile app developer.`;
+  const defaultBaseText = 'I am ';
+
   const [motionKey, setMotionKey] = useState(0);
-  const [typingStrings, setTypingStrings] = useState([
-    'a software engineer.',
-    'a web developer.',
-    'a mobile app developer.',
-  ]);
-  const [strings, setStrings] = useState(
-    `a software engineer.\na web developer.\na mobile app developer.`,
+  const [typingStrings, setTypingStrings] = useState(
+    getStringList(defaultStrings),
   );
-  const [baseString, setBaseString] = useState('I am ');
+  const [strings, setStrings] = useState(defaultStrings);
+  const [baseText, setBaseText] = useState(defaultBaseText);
 
-  const updateStrings = useCallback((value) => {
-    let stringList: string[] = [];
-    stringList = value.split('\n').filter((str: string) => {
-      return !!str;
-    });
+  const updateStrings = useCallback((value: string) => {
+    let stringList: string[] = getStringList(value);
     if (stringList.length === 0) stringList = [''];
     setTypingStrings(stringList);
     setStrings(value);
   }, []);
 
-  const updateBaseString = useCallback((value) => {
-    setBaseString(value);
+  const updateBaseText = useCallback((value) => {
+    setBaseText(value);
   }, []);
 
   useEffect(() => {
@@ -34,7 +33,7 @@ function TypingMotionTextDemoPage() {
   }, [typingStrings]);
 
   return (
-    <div className="typing-motion-text-demo-page">
+    <div className="typing-motion-demo-page">
       <div style={{ width: '100%', display: 'block', textAlign: 'center' }}>
         <div
           style={{
@@ -49,8 +48,8 @@ function TypingMotionTextDemoPage() {
         <input
           className="base-text-input"
           type="text"
-          value={baseString}
-          onChange={(e) => updateBaseString(e.target.value)}
+          value={baseText}
+          onChange={(e) => updateBaseText(e.target.value)}
         />
         <div style={{ fontSize: '18px', color: 'white', marginBottom: '5px' }}>
           Typing Text
@@ -60,10 +59,10 @@ function TypingMotionTextDemoPage() {
           value={strings}
           onChange={(e) => updateStrings(e.target.value)}
         />
-        <TypingMotionText baseText={baseString} typingStrings={typingStrings} />
+        <TypingMotion baseText={baseText} typingStrings={typingStrings} />
       </div>
     </div>
   );
-}
+};
 
-export default TypingMotionTextDemoPage;
+export default TypingMotionDemoPage;
