@@ -1,8 +1,4 @@
-.App {
-  text-align: center;
+.app {
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #112421;
+  background: var(--main-bg-color);
 }

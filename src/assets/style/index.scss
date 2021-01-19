@@ -1,3 +1,5 @@
+@import './_reset';
+@import './_variables';
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@5.2/distr/fira_code.css);
 
 :root {
@@ -8,7 +10,6 @@
 }
 
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -24,4 +25,34 @@ code {
   code {
     font-family: var(--code-font-family-supports);
   }
+}
+
+a,
+a:active,
+a:focus,
+a:focus-within,
+a:focus-visible,
+a:hover,
+a:visited,
+button,
+button:active,
+button:focus,
+button:focus-within,
+button:focus-visible,
+button:hover,
+button:visited,
+input,
+input:active,
+input:focus,
+input:focus-within,
+input:focus-visible,
+input:hover,
+input:visited {
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  text-decoration: none;
 }
