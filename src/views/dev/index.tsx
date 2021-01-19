@@ -6,10 +6,10 @@ import './dev.scss';
 const DevPage = () => {
   return (
     <div className="dev-page">
-      DevPage
-      <div>
-        <Link to="/dev/demo/typingMotionText">TypingMotionText</Link>
-      </div>
+      All Components
+      <Link className="link" to="/dev/demo/TypingMotion">
+        TypingMotion
+      </Link>
     </div>
   );
 };

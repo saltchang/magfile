@@ -1,0 +1,23 @@
+@mixin for-size($size) {
+  @if $size == mobile {
+    @media (max-width: 599px) {
+      @content;
+    }
+  } @else if $size == pad-v {
+    @media (min-width: 600px) {
+      @content;
+    }
+  } @else if $size == pad-h {
+    @media (min-width: 900px) {
+      @content;
+    }
+  } @else if $size == monitor {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $size == largest {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+}

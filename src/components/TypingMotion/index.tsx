@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { string, bool, arrayOf } from 'prop-types';
 
-import './style.scss';
+import './TypingMotion.scss';
 
-const TypingMotionText = ({
+const TypingMotion = ({
   withTag,
   codeStyle,
   baseText,
@@ -24,7 +24,7 @@ const TypingMotionText = ({
   const [isReadyToSwitchString, setIsReadyToSwtichString] = useState(false);
   const [typingStringId, setTypingStringId] = useState(initialTypingStringId);
 
-  let rootDivClasses = 'typing-motion-text ';
+  let rootDivClasses = 'typing-motion ';
   if (codeStyle) rootDivClasses += 'code';
   const stringSwitchDelay = 2000;
 
@@ -185,14 +185,14 @@ interface PropTypes {
   typingStrings: string[];
 }
 
-TypingMotionText.propTypes = {
+TypingMotion.propTypes = {
   withTag: string,
   codeStyle: bool,
   baseText: string,
   typingStrings: arrayOf(string),
 };
 
-TypingMotionText.defaultProps = {
+TypingMotion.defaultProps = {
   withTag: 'code',
   codeStyle: true,
   baseText: 'I am ',
@@ -203,4 +203,4 @@ TypingMotionText.defaultProps = {
   ],
 };
 
-export default TypingMotionText;
+export default TypingMotion;

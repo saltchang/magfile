@@ -1,6 +1,6 @@
-@import './_reset';
-@import './_variables';
-@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@5.2/distr/fira_code.css);
+@use '_reset.scss';
+@use './_variables';
+@import url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@5.2/distr/fira_code.css');
 
 :root {
   --code-font-family: 'Fira Code', source-code-pro, Menlo, Monaco, Consolas,
@@ -9,13 +9,13 @@
     Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+// body {
+//   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+//     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+//     sans-serif;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
 
 code {
   font-family: var(--code-font-family);
@@ -47,10 +47,14 @@ input:focus,
 input:focus-within,
 input:focus-visible,
 input:hover,
-input:visited {
-  padding: 0;
-  margin: 0;
-  background: none;
+input:visited,
+textarea,
+textarea:active,
+textarea:focus,
+textarea:focus-within,
+textarea:focus-visible,
+textarea:hover,
+textarea:visited {
   border: none;
   outline: none;
   box-shadow: none;
