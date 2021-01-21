@@ -6,8 +6,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "lint": "eslint",
-    "format": "prettier --write '**/*.{js,ts,jsx,tsx,vue,json,scss,css,html,md}'",
+    "lint": "eslint --fix '**/*.{js,jsx,ts,tsx}'",
+    "format": "prettier --write '**/*.{js,ts,jsx,tsx,json,scss,css,html,md}'",
     "eject": "react-scripts eject"
   },
   "dependencies": {
