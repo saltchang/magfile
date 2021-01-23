@@ -1,0 +1,17 @@
+.dark-mode {
+  // background-color
+  --main-bg-color: #191923;
+  --secondary-bg-color: #20202a;
+  --gradient-dark-bg-color: linear-gradient(
+    135deg,
+    #1b1b29fa 0%,
+    #25252cfa 100%
+  );
+
+  // font-color
+  --font-color-light: #fafafc;
+  --font-color-gray: #8c8c8e;
+}
+.light-mode {
+  --main-bg-color: #e0e0e6;
+}

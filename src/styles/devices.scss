@@ -1,4 +1,8 @@
-@mixin for-size($size) {
+/* Development use mobile first,
+you should use default css to style your pages,
+and then use the following mixin to style the sizes of devices except mobile. */
+
+@mixin size($size: mobile) {
   @if $size == mobile {
     @media (max-width: 599px) {
       @content;
