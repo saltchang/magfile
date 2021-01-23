@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import './home.scss';
-import SideBar from '../../components/SideBar';
+import SideInfoBar from '../../components/SideInfoBar';
 
 const HomePage = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -12,7 +12,7 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
-      <SideBar />
+      <SideInfoBar />
     </div>
   );
 };

@@ -1,10 +1,10 @@
+import './styles/main.scss';
 import './declarations/index.d';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import './styles/main.scss';
 import App from './views/App';
 import reportWebVitals from './services/reportWebVitals';
 
