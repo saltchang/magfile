@@ -2,14 +2,21 @@
   // background-color
   --main-bg-color: #191923;
   --secondary-bg-color: #20202a;
-  --gradient-dark-bg-color: linear-gradient(
-    135deg,
-    #1b1b29fa 0%,
-    #25252cfa 100%
+  --gradient-down-dark-bg-color: linear-gradient(
+    180deg,
+    #3e3e44fa 0%,
+    var(--secondary-bg-color) 100%
+  );
+  --gradient-up-dark-bg-color: linear-gradient(
+    0deg,
+    #2a2a31fa 0%,
+    var(--secondary-bg-color) 100%
   );
 
   // font-color
-  --font-color-light: #fafafc;
+  --fong-color-high: #ffffff;
+  --font-color-main: #fafafc;
+  --font-color-secondary: #acacac;
   --font-color-gray: #8c8c8e;
 }
 .light-mode {

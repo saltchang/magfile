@@ -11,7 +11,7 @@ import MailIcon from '../../images/icons/socials/i-mail.svg';
 
 const SideInfoBar = () => {
   const [sideInfoBarClasses, setSideInfoBarClasses] = useState('side-info-bar');
-  const [isExpand, setIsExpand] = useState(true);
+  const [isExpand, setIsExpand] = useState(false);
   const toggleSideInfoBar = () => {
     setIsExpand(!isExpand);
   };
@@ -47,14 +47,6 @@ const SideInfoBar = () => {
     },
   ];
 
-  // const SocialLinks = () => {
-  //   soclialLinks.forEach((link) => {
-  //     return (
-
-  //     );
-  //   });
-  // };
-
   return (
     <div className={sideInfoBarClasses}>
       <button type="button" className="toggle" onClick={toggleSideInfoBar}>
@@ -69,7 +61,17 @@ const SideInfoBar = () => {
         <div className="title">Software Engineer</div>
       </div>
 
-      <div className="info-content">content</div>
+      <div className="info-content-container">
+        <div className="info-content-container__content">
+          <p>正在趨近於 27 歲，興趣使然的自由軟體開發者，4 年軟體工程經驗。</p>
+          <p>
+            認為寫程式是一種必要手段，目的為開發出「容易使用、美觀、安全」的應用程式，並將其分享給眾人使用，以改善人類社群的工作效率以及生活品質。
+          </p>
+          <p>
+            軟體雖不能解決人生的痛苦及社會的黑暗，但可以讓你我的生活更簡單容易些。
+          </p>
+        </div>
+      </div>
 
       <div className="info-footer">
         {soclialLinks.map((link) => {

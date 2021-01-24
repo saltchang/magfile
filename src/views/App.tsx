@@ -20,17 +20,19 @@ const App = () => {
   }, [appIsInDarkMode]);
   return (
     <div className={appClassName}>
-      <Switch>
-        <Route path="/demo/typingMotion">
-          <TypingMotionDemoPage />
-        </Route>
-        <Route path="/dev">
-          <DevPage />
-        </Route>
-        <Route path="/">
-          <HomePage />
-        </Route>
-      </Switch>
+      <div className="app-container">
+        <Switch>
+          <Route path="/demo/typingMotion">
+            <TypingMotionDemoPage />
+          </Route>
+          <Route path="/dev">
+            <DevPage />
+          </Route>
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
+      </div>
     </div>
   );
 };

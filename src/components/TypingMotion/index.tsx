@@ -166,7 +166,7 @@ const TypingMotion = ({
       <span className="typing-text">
         {innerTypingStrings[typingStringId].slice(0, typingCharId)}
         <span className={textCursorClasses}>&ensp;</span>
-      </span>{' '}
+      </span>
       {withTag ? (
         <span className="tag">
           {'</'}
@@ -193,13 +193,13 @@ TypingMotion.propTypes = {
 };
 
 TypingMotion.defaultProps = {
-  withTag: 'code',
+  withTag: 'div',
   codeStyle: true,
-  baseText: 'I am ',
+  baseText: 'A ',
   typingStrings: [
-    'a software engineer.',
-    'a web developer.',
-    'a mobile apps developer.',
+    'software engineer.',
+    'full-stack developer.',
+    'frontend engineer.',
   ],
 };
 

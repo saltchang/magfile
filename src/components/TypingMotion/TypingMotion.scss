@@ -1,6 +1,6 @@
 .typing-motion {
   --cursor-color: #ffc107;
-  --tag-color: #ffc107;
+  --tag-color: #ef596f;
   --code-text-color: #d7d7d7;
   --font-size: 14px;
   --blink-time: 750ms;
@@ -10,7 +10,6 @@
   font-size: var(--font-size);
   display: flex;
   padding: 10px;
-  background: #112421;
 
   &.code {
     display: inline-block;

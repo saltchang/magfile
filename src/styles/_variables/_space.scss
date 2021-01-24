@@ -1,5 +1,6 @@
 :root {
   --space: 4px;
+  --space-0: calc(var(--space) * 0);
   --space-1: calc(var(--space) * 1);
   --space-2: calc(var(--space) * 2);
   --space-3: calc(var(--space) * 3);
@@ -12,8 +13,13 @@
   --space-10: calc(var(--space) * 10);
   --space-11: calc(var(--space) * 11);
   --space-12: calc(var(--space) * 12);
+  --space-13: calc(var(--space) * 13);
+  --space-14: calc(var(--space) * 14);
+  --space-15: calc(var(--space) * 15);
+  --space-16: calc(var(--space) * 16);
 
   --space-p: 1.25%;
+  --space-p-0: calc(var(--space-p) * 0);
   --space-p-1: calc(var(--space-p) * 1);
   --space-p-2: calc(var(--space-p) * 2);
   --space-p-3: calc(var(--space-p) * 3);
