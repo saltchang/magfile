@@ -39,6 +39,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'no-unused-vars': ['warn'],
   },
   settings: {
     'import/resolver': {

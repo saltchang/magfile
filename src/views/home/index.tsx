@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 import './home.scss';
-import SideInfoBar from '../../components/SideInfoBar';
 
 import demoMainBanner from '../../images/demo/d-banner-2160p.jpg';
 
@@ -17,7 +16,6 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
-      <SideInfoBar />
       <div className="main-container">
         <div className="top-bar" />
         <div

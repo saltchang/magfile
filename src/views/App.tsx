@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 
 import HomePage from './home';
+import AboutPage from './about/index';
 import DevPage from './dev';
 import TypingMotionDemoPage from './dev/typingMotionDemo';
+import SideInfoBar from '../components/SideInfoBar';
 
 import './App.scss';
 
@@ -20,6 +22,7 @@ const App = () => {
   }, [appIsInDarkMode]);
   return (
     <div className={appClassName}>
+      <SideInfoBar />
       <div className="app-container">
         <Switch>
           <Route path="/demo/typingMotion">
@@ -27,6 +30,9 @@ const App = () => {
           </Route>
           <Route path="/dev">
             <DevPage />
+          </Route>
+          <Route path="/about">
+            <AboutPage />
           </Route>
           <Route path="/">
             <HomePage />
