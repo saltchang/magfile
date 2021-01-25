@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 import './home.scss';
 import SideInfoBar from '../../components/SideInfoBar';
-import TypingMotion from '../../components/TypingMotion';
 
 import demoMainBanner from '../../images/demo/d-banner-2160p.jpg';
 
@@ -33,9 +32,6 @@ const HomePage = () => {
               <div className="main-banner-title__sub">{subTitle}</div>
             </div>
           </div>
-        </div>
-        <div className="typing-motion-container">
-          <TypingMotion />
         </div>
 
         {/* <div className="main-content">main-content</div> */}

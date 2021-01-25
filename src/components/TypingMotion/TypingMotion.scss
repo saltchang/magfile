@@ -30,6 +30,9 @@
     display: inline-block;
 
     .text-cursor {
+      height: calc(var(--font-size) - 1px);
+      display: inline-block;
+      padding-top: 1px;
       margin-left: 1px;
       background: var(--cursor-color);
 

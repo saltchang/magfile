@@ -27,6 +27,7 @@ const TypingMotion = ({
   let rootDivClasses = 'typing-motion ';
   if (codeStyle) rootDivClasses += 'code';
   const stringSwitchDelay = 2000;
+  const startToTypeDelay = 1000;
 
   const clearAllTimer = () => {
     const highestTimeoutId = setTimeout(() => {});
@@ -50,8 +51,8 @@ const TypingMotion = ({
   const getTypeDelay = () => {
     const isLongDelay = Math.floor(Math.random() * Math.floor(50)) === 1;
     const randomShortDelay =
-      100 + 10 * Math.floor(Math.random() * Math.floor(3));
-    const randomLongDelay = isLongDelay ? 200 : 0;
+      90 + 10 * Math.floor(Math.random() * Math.floor(3));
+    const randomLongDelay = isLongDelay ? 150 : 0;
     return randomShortDelay + randomLongDelay;
   };
 
@@ -87,12 +88,12 @@ const TypingMotion = ({
     if (hasTextRemain) {
       setTimeout(() => {
         setTypingCharId(typingCharId - 1);
-      }, 50);
+      }, 40);
     } else {
       setTypingTextClasses(`${textCursorClasses}blink`);
       setTimeout(() => {
         setIsDeleting(false);
-      }, stringSwitchDelay);
+      }, startToTypeDelay);
     }
   };
 
@@ -165,7 +166,7 @@ const TypingMotion = ({
       {baseText}
       <span className="typing-text">
         {innerTypingStrings[typingStringId].slice(0, typingCharId)}
-        <span className={textCursorClasses}>&ensp;</span>
+        <div className={textCursorClasses}>&ensp;</div>
       </span>
       {withTag ? (
         <span className="tag">
@@ -195,11 +196,11 @@ TypingMotion.propTypes = {
 TypingMotion.defaultProps = {
   withTag: 'div',
   codeStyle: true,
-  baseText: 'A ',
+  baseText: 'I am ',
   typingStrings: [
-    'software engineer.',
-    'full-stack developer.',
-    'frontend engineer.',
+    'a software engineer.',
+    'a full-stack developer.',
+    'a frontend engineer.',
   ],
 };
 

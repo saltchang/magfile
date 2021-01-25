@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 import './SideInfoBar.scss';
 
+import TypingMotion from '../TypingMotion';
+
 import angleArrowDoubleRight from '../../images/icons/arrows/i-angle-arrow-double-right.svg';
 import DemoAvatar from '../../images/demo/d-avatar-640.png';
 import GitHubIcon from '../../images/icons/socials/i-github-alt.svg';
@@ -59,6 +61,16 @@ const SideInfoBar = () => {
         </div>
         <div className="name">David Chang</div>
         <div className="title">Software Engineer</div>
+      </div>
+
+      <div className="typing-motion-container">
+        <TypingMotion
+          typingStrings={[
+            'a full-stack engineer.',
+            'a software developer.',
+            'a creator.',
+          ]}
+        />
       </div>
 
       <div className="info-content-container">

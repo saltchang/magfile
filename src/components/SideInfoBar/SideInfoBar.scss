@@ -1,7 +1,7 @@
 @use '../../styles/devices' as device;
 
 .side-info-bar {
-  --bar-width: 320px;
+  --bar-width: 100%;
   --icon-margin-t: var(--space-6);
   --icon-margin-x: var(--space-6);
   --avatar-size: 100px;
@@ -62,6 +62,11 @@
     }
   }
 
+  .typing-motion-container {
+    padding-top: var(--space-6);
+    text-align: center;
+  }
+
   .info-content-container {
     box-sizing: border-box;
     height: var(--content-height);
@@ -72,7 +77,7 @@
       padding: var(--space-10);
       line-height: var(--space-7);
       letter-spacing: 0.1px;
-      font-size: var(--size-m);
+      font-size: var(--size-l);
       font-weight: var(--font-regular);
 
       p {
