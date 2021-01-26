@@ -1,8 +1,27 @@
 import * as React from 'react';
 
+import DemoMainBannerImage from '../../images/demo/d-about-me-brand-photo_SoyMilk_and_the_City.jpg';
+
+import './about.scss';
+
 const AboutPage = () => {
   return (
     <div className="about-page">
+      <header
+        className="header"
+        style={{ backgroundImage: `url(${DemoMainBannerImage})` }}
+      >
+        <div className="header-overlay">
+          <div className="header-title">
+            <h1 className="header-title__main">About</h1>
+            <span className="header-title__sub">
+              <p>「我，藐視戰鬥的艱辛。」</p>
+              <p>&quot;Belli dura despicio.&quot;</p>
+            </span>
+          </div>
+        </div>
+      </header>
+      {/* todo: semantic elements */}
       <div className="content">
         <p>正在趨近於 27 歲，興趣使然的自由軟體開發者，4 年軟體工程經驗。</p>
         <p>

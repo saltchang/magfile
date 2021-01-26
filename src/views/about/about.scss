@@ -1,70 +1,43 @@
 @use '../../styles/devices' as device;
 
-.side-info-bar {
-  --bar-width: 100%;
-  --icon-margin-t: var(--space-6);
-  --icon-margin-x: var(--space-6);
-  --avatar-size: 100px;
+.about-page {
+  .header {
+    position: relative;
+    background: no-repeat center center;
+    background-color: gray;
+    background-attachment: scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    margin-bottom: 0;
 
-  --header-height: 220px;
-  --footer-height: 70px;
-  --content-height: calc(100vh - var(--header-height) - var(--footer-height));
-}
+    &-overlay {
+      padding: 90px 0 80px;
+      width: 100%;
+      height: 100%;
+      background-color: #2d2d2d78;
 
-.side-info-bar {
-  position: fixed;
-  z-index: 100;
-  left: calc(-1 * var(--bar-width));
-  height: 100vh;
-  width: var(--bar-width);
-  color: var(--font-color-main);
-  background: var(--secondary-bg-color);
-  transition: left 500ms ease-in-out;
+      .header-title {
+        text-align: center;
+        color: var(--fong-color-high);
+        text-shadow: 0 0 1rem black;
 
-  .toggle {
-    background: none;
-    position: fixed;
-    top: var(--icon-margin-t);
-    left: var(--icon-margin-x);
-    transition: left 500ms ease-in-out;
+        &__main {
+          font-size: var(--size-main-header-title);
+          margin-bottom: var(--space-4);
+        }
 
-    .icon-toggle {
-      width: 16px;
-      transition: transform 500ms ease-in-out;
-    }
-  }
+        &__sub {
+          font-weight: var(--font-light);
+          font-size: var(--size-sub-header-title);
 
-  .info-header {
-    box-sizing: border-box;
-    padding-top: var(--space-10);
-    height: var(--header-height);
-    text-align: center;
-    background: var(--gradient-down-dark-bg-color);
-
-    .avatar {
-      margin-bottom: var(--space-6);
-      &__image {
-        object-fit: cover;
-        border-radius: 50%;
-        width: var(--avatar-size);
-        height: var(--avatar-size);
+          p {
+            margin-bottom: var(--space-1);
+          }
+        }
       }
     }
-
-    .name {
-      font-size: var(--size-xl);
-      margin-bottom: var(--space-3);
-    }
-
-    .title {
-      font-size: var(--size-l);
-      color: var(--font-color-gray);
-    }
-  }
-
-  .typing-motion-container {
-    padding-top: var(--space-6);
-    text-align: center;
   }
 
   .info-content-container {
@@ -85,44 +58,7 @@
       }
     }
   }
-
-  .info-footer {
-    box-sizing: border-box;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: var(--footer-height);
-    padding: var(--space-4) var(--space-8);
-    background: var(--gradient-up-dark-bg-color);
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    &-link {
-      &__icon {
-        width: 16px;
-      }
-    }
-  }
-}
-
-.side-info-bar.expand {
-  left: 0;
-  .toggle {
-    left: calc(var(--bar-width) - var(--icon-margin-x) * 2);
-
-    .icon-toggle {
-      transform: rotateY(180deg);
-    }
-  }
 }
 
 @include device.size(pad-v) {
-  .side-info-bar {
-    left: 0;
-    .toggle {
-      display: none;
-    }
-  }
 }

@@ -15,7 +15,7 @@ import './SideInfoBar.scss';
 
 const SideInfoBar = () => {
   const [sideInfoBarClasses, setSideInfoBarClasses] = useState('side-info-bar');
-  const [isExpand, setIsExpand] = useState(true);
+  const [isExpand, setIsExpand] = useState(false);
   const toggleSideInfoBar = () => {
     setIsExpand(!isExpand);
   };
