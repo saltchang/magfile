@@ -17,8 +17,8 @@
   left: calc(-1 * var(--bar-width));
   height: 100vh;
   width: var(--bar-width);
-  color: var(--font-color-main);
-  background: var(--secondary-bg-color);
+  color: var(--color-text-primary);
+  background: var(--color-header-bg);
   transition: left 500ms ease-in-out;
 
   .go-home-icon-link {
@@ -45,6 +45,7 @@
     .icon-toggle {
       width: 16px;
       transition: transform 500ms ease-in-out;
+      filter: drop-shadow(0 0 7px #000000);
     }
   }
 
@@ -107,7 +108,7 @@
 
     .page-link {
       font-size: var(--size-ml);
-      color: var(--font-color-secondary);
+      color: var(--color-text-secondary);
       text-decoration: none;
     }
   }
@@ -146,6 +147,7 @@
 
     .icon-toggle {
       transform: rotateY(180deg);
+      filter: none;
     }
   }
 }

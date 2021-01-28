@@ -24,7 +24,7 @@
     .main-banner {
       height: 280px;
       background: no-repeat center center;
-      background-color: var(--main-bg-color);
+      background-color: var(--color-bg-canvas);
       background-attachment: scroll;
       position: relative;
       background-size: cover;
@@ -46,7 +46,7 @@
 
         .main-banner-title {
           text-align: center;
-          color: var(--fong-color-high);
+          color: var(--color-header-logo);
           &__main {
             font-size: var(--size-2l);
             margin-bottom: var(--space-4);

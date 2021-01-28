@@ -5,6 +5,7 @@ import TypingMotion from '../TypingMotion';
 
 import HomeIcon from '../../images/icons/links/i-home.svg';
 import angleArrowDoubleRight from '../../images/icons/arrows/i-angle-arrow-double-right.svg';
+import angleArrowDoubleRightLight from '../../images/icons/arrows/i-angle-arrow-double-right-light.svg';
 import DemoAvatar from '../../images/demo/d-avatar-640.png';
 import GitHubIcon from '../../images/icons/socials/i-github-alt.svg';
 import TwitterIcon from '../../images/icons/socials/i-twitter.svg';
@@ -65,7 +66,11 @@ const SideInfoBar = () => {
       </Link>
 
       <button type="button" className="toggle" onClick={toggleSideInfoBar}>
-        <img className="icon-toggle" src={angleArrowDoubleRight} alt="more" />
+        <img
+          className="icon-toggle"
+          src={isExpand ? angleArrowDoubleRight : angleArrowDoubleRightLight}
+          alt="more"
+        />
       </button>
 
       <div className="info-header">

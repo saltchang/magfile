@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import DemoMainBannerImage from '../../images/demo/d-about-me-brand-photo_SoyMilk_and_the_City.jpg';
+import DemoMainBannerImage from '../../images/demo/d-smoky-morning-in-Cascades.jpeg';
 
 import './about.scss';
 
@@ -11,27 +11,26 @@ const AboutPage = () => {
         className="header"
         style={{ backgroundImage: `url(${DemoMainBannerImage})` }}
       >
-        <div className="header-overlay">
-          <div className="header-title">
-            <h1 className="header-title__main">About</h1>
-            <span className="header-title__sub">
-              <p>「我，藐視戰鬥的艱辛。」</p>
-              <p>&quot;Belli dura despicio.&quot;</p>
+        <div className="overlay">
+          <div className="banner">
+            <h1 className="banner__title">About</h1>
+            <span className="banner__description">
+              興趣使然的開發者 ‧ 無情的寫扣機器人
             </span>
           </div>
         </div>
       </header>
-      {/* todo: semantic elements */}
-      <div className="content">
+
+      <main className="content">
         <p>正在趨近於 27 歲，興趣使然的自由軟體開發者，4 年軟體工程經驗。</p>
         <p>
-          認為寫程式是一種必要手段，目的為開發出「容易使用、美觀、安全」的應用程式，並將其分享給眾人使用，以改善人類社群的工作效率以及生活品質。
+          認為寫程式是一種必要途徑，目的為開發出「好用、美觀、安全」的應用程式，並將其分享給眾人，以改善人類社群的工作效率以及生活品質。
         </p>
         <p>
           軟體雖不能解決人生的痛苦及社會的黑暗，但可以讓你我的生活更簡單容易些。
         </p>
 
-        <p />
+        <p>-</p>
 
         <p>
           I am a software developer who yearns for freedom. I have four years of
@@ -50,7 +49,7 @@ const AboutPage = () => {
           Although software cannot solve the pain in life or the darkness in our
           society, it can still make your life easier.{' '}
         </p>
-      </div>
+      </main>
     </div>
   );
 };
