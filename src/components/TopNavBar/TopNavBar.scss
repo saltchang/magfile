@@ -1,0 +1,43 @@
+@use '../../styles/devices' as device;
+
+.top-nav-bar {
+  display: none;
+}
+
+@include device.size(pad-v) {
+  .top-nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: transparent;
+    padding: 0 var(--space-8);
+    height: 60px;
+    display: flex;
+    align-items: center;
+
+    .nav-brand {
+      position: absolute;
+      color: var(--color-header-logo);
+      font-size: var(--size-ml);
+      font-weight: var(--font-bold);
+    }
+
+    .nav-link-container {
+      width: 100%;
+      display: grid;
+      align-items: center;
+      column-gap: var(--space-8);
+      grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+      direction: rtl;
+
+      .nav-link-item {
+        color: var(--color-header-logo);
+        font-size: var(--size-l);
+        font-weight: var(--font-bold);
+        text-shadow: 0 0 0.8rem black;
+      }
+    }
+  }
+}

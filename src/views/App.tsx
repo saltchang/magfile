@@ -5,6 +5,7 @@ import { matchRoutes } from 'react-router-config';
 import Router from '../router';
 import routes from '../router/routes';
 
+import TopNavBar from '../components/TopNavBar/index';
 import TopHeader from '../components/TopHeader';
 import SideInfoBar from '../components/SideInfoBar';
 
@@ -32,6 +33,7 @@ const App = () => {
   }, [location]);
   return (
     <div className={appClassName}>
+      <TopNavBar />
       <TopHeader headerTitle={headerTitle} />
 
       <main className="main-container">

@@ -68,8 +68,15 @@ textarea:visited {
   text-decoration: none;
 }
 
-// remove hightlight effect while clicked
-a {
+// remove hightlight effect while a tag clicked
+a,
+a:active,
+a:focus,
+a:focus-within,
+a:focus-visible,
+a:hover,
+a:visited {
+  color: var(--color-text-primary);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;

@@ -73,7 +73,7 @@ const SideInfoBar = () => {
         />
       </button>
 
-      <div className="info-header">
+      <header className="info-header">
         <div className="avatar">
           <img className="avatar__image" src={DemoAvatar} alt="avatar" />
         </div>
@@ -87,9 +87,9 @@ const SideInfoBar = () => {
           ]}
         />
         <hr className="divider" />
-      </div>
+      </header>
 
-      <div className="info-menu-container">
+      <nav className="info-menu-container">
         <Link
           className="page-link"
           to="/about"
@@ -97,9 +97,9 @@ const SideInfoBar = () => {
         >
           About
         </Link>
-      </div>
+      </nav>
 
-      <div className="info-footer">
+      <footer className="info-footer">
         {soclialLinks.map((link) => {
           return (
             <a
@@ -117,7 +117,7 @@ const SideInfoBar = () => {
             </a>
           );
         })}
-      </div>
+      </footer>
     </div>
   );
 };
