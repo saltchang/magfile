@@ -14,6 +14,7 @@
 .side-info-bar {
   position: fixed;
   z-index: 100;
+  top: 0;
   left: calc(-1 * var(--bar-width));
   height: 100vh;
   width: var(--bar-width);
@@ -154,7 +155,7 @@
 
 @include device.size(pad-v) {
   .side-info-bar {
-    left: 0;
+    // left: 0;
     .toggle {
       display: none;
     }

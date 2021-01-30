@@ -1,26 +1,10 @@
 import * as React from 'react';
 
-import DemoMainBannerImage from '../../images/demo/d-smoky-morning-in-Cascades.jpeg';
-
 import './about.scss';
 
 const AboutPage = () => {
   return (
     <div className="about-page">
-      <header
-        className="header"
-        style={{ backgroundImage: `url(${DemoMainBannerImage})` }}
-      >
-        <div className="overlay">
-          <div className="banner">
-            <h1 className="banner__title">About</h1>
-            <span className="banner__description">
-              興趣使然的開發者 ‧ 無情的寫扣機器人
-            </span>
-          </div>
-        </div>
-      </header>
-
       <main className="content">
         <p>正在趨近於 27 歲，興趣使然的自由軟體開發者，4 年軟體工程經驗。</p>
         <p>
