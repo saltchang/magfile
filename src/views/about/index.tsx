@@ -4,8 +4,8 @@ import './about.scss';
 
 const AboutPage = () => {
   return (
-    <div className="about-page">
-      <main className="content">
+    <main className="about-page">
+      <div className="content">
         <p>正在趨近於 27 歲，興趣使然的自由軟體開發者，4 年軟體工程經驗。</p>
         <p>
           認為寫程式是一種必要途徑，目的為開發出「好用、美觀、安全」的應用程式，並將其分享給眾人，以改善人類社群的工作效率以及生活品質。
@@ -33,8 +33,8 @@ const AboutPage = () => {
           Although software cannot solve the pain in life or the darkness in our
           society, it can still make your life easier.{' '}
         </p>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 };
 

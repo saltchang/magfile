@@ -28,7 +28,6 @@ const App = () => {
   }, [appIsInDarkMode]);
 
   useEffect(() => {
-    console.log(matchedRoutes);
     setHeaderTitle(matchedRoutes[0].route.meta.headerTitle);
   }, [location]);
   return (

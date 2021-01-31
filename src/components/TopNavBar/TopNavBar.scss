@@ -26,17 +26,18 @@
 
     .nav-link-container {
       width: 100%;
-      display: grid;
+      display: flex;
       align-items: center;
-      column-gap: var(--space-8);
-      grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-      direction: rtl;
+      justify-content: flex-end;
 
       .nav-link-item {
         color: var(--color-header-logo);
         font-size: var(--size-l);
         font-weight: var(--font-bold);
         text-shadow: 0 0 0.8rem black;
+        &:not(:last-of-type) {
+          margin-right: var(--space-8);
+        }
       }
     }
   }

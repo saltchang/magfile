@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { navRoutes } from '../../router/routes';
+
 import TypingMotion from '../TypingMotion';
 
 import HomeIcon from '../../images/icons/links/i-home.svg';
@@ -90,13 +92,16 @@ const SideInfoBar = () => {
       </header>
 
       <nav className="info-menu-container">
-        <Link
-          className="page-link"
-          to="/about"
-          onClick={() => closeSideInfoBar()}
-        >
-          About
-        </Link>
+        {navRoutes.map((link) => (
+          <Link
+            key={link.name}
+            className="page-link"
+            to={link.path}
+            onClick={() => closeSideInfoBar()}
+          >
+            {link.meta.navText}
+          </Link>
+        ))}
       </nav>
 
       <footer className="info-footer">

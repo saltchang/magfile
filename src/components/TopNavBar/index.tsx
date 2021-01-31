@@ -1,26 +1,23 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import { navRoutes } from '../../router/routes';
 
 import './TopNavBar.scss';
 
 const TopNavBar = () => {
-  const navLinks = [
-    {
-      name: 'About',
-      path: '/about',
-    },
-    {
-      name: 'Home',
-      path: '/',
-    },
-  ];
   return (
     <div className="top-nav-bar">
-      <header className="nav-brand">MAGFILE</header>
+      <Link className="nav-brand" key="nav-brand" to="/">
+        MAGFILE
+      </Link>
       <nav className="nav-link-container">
-        {navLinks.map((link) => (
-          <Link key={link.name} className="nav-link-item" to={link.path}>
-            {link.name}
+        {navRoutes.map((link) => (
+          <Link
+            key={link.meta.navText}
+            className="nav-link-item"
+            to={link.path}
+          >
+            {link.meta.navText}
           </Link>
         ))}
       </nav>
