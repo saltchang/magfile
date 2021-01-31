@@ -1,6 +1,6 @@
 @use '../../styles/devices' as device;
 
-.side-info-bar {
+.side-bar {
   --bar-width: 100%;
   --max-bar-width: 375px;
   --icon-margin-t: var(--space-6);
@@ -14,7 +14,7 @@
   --transition-left: left 500ms ease-in-out;
 }
 
-.side-info-bar {
+.side-bar {
   position: fixed;
   z-index: 100;
   top: 0;
@@ -143,7 +143,7 @@
   }
 }
 
-.side-info-bar.expand {
+.side-bar.expand {
   left: 0;
 
   .go-home-icon-link {
@@ -165,7 +165,7 @@
 }
 
 @include device.size(pad-v) {
-  .side-info-bar {
+  .side-bar {
     display: none;
   }
 }

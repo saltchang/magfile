@@ -4,7 +4,7 @@ import './about.scss';
 
 const AboutPage = () => {
   return (
-    <main className="about-page">
+    <div className="about-page">
       <div className="content">
         <p>正在趨近於 27 歲，興趣使然的自由軟體開發者，4 年軟體工程經驗。</p>
         <p>
@@ -34,7 +34,7 @@ const AboutPage = () => {
           society, it can still make your life easier.{' '}
         </p>
       </div>
-    </main>
+    </div>
   );
 };
 

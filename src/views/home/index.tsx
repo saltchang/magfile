@@ -10,11 +10,11 @@ const HomePage = () => {
   }, [isLoaded]);
 
   return (
-    <main className="home-page">
+    <div className="home-page">
       <div className="main-container">
         {/* <div className="main-content">main-content</div> */}
       </div>
-    </main>
+    </div>
   );
 };
 

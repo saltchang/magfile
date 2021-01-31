@@ -1,6 +1,6 @@
 @use '../../styles/devices' as device;
 
-.top-nav-bar {
+.nav-bar {
   position: fixed;
   top: 0;
   left: 0;
@@ -27,7 +27,7 @@
 }
 
 @include device.size(pad-v) {
-  .top-nav-bar {
+  .nav-bar {
     .nav-brand {
       right: auto;
       font-size: var(--size-ml);

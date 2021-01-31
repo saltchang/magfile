@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 const ResumePage = () => {
-  return <main className="resume-page">ResumePage</main>;
+  return <div className="resume-page">ResumePage</div>;
 };
 
 export default ResumePage;

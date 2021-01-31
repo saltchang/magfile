@@ -5,9 +5,10 @@ import { matchRoutes } from 'react-router-config';
 import Router from '../router';
 import routes from '../router/routes';
 
-import TopNavBar from '../components/TopNavBar/index';
-import TopHeader from '../components/TopHeader';
-import SideInfoBar from '../components/SideInfoBar';
+import NavBar from '../components/NavBar';
+import Header from '../components/Header';
+import SideBar from '../components/SideBar';
+import Footer from '../components/Footer';
 
 import './App.scss';
 
@@ -32,16 +33,13 @@ const App = () => {
   }, [location]);
   return (
     <div className={appClassName}>
-      <TopNavBar />
-      <TopHeader headerTitle={headerTitle} />
-
+      <NavBar />
+      <SideBar />
+      <Header headerTitle={headerTitle} />
       <main className="main-container">
-        <SideInfoBar />
-
-        <div className="switch-container">
-          <Router />
-        </div>
+        <Router />
       </main>
+      <Footer />
     </div>
   );
 };
