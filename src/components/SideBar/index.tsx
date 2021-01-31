@@ -14,20 +14,20 @@ import TwitterIcon from '../../images/icons/socials/i-twitter.svg';
 import LinkedInIcon from '../../images/icons/socials/i-linkedin.svg';
 import MailIcon from '../../images/icons/socials/i-mail.svg';
 
-import './SideInfoBar.scss';
+import './SideBar.scss';
 
-const SideInfoBar = () => {
-  const [sideInfoBarClasses, setSideInfoBarClasses] = useState('side-info-bar');
+const SideBar = () => {
+  const [sideBarClasses, setSideBarClasses] = useState('side-bar');
   const [isExpand, setIsExpand] = useState(false);
-  const toggleSideInfoBar = () => {
+  const toggleSideBar = () => {
     setIsExpand(!isExpand);
   };
-  const closeSideInfoBar = () => {
+  const closeSideBar = () => {
     setIsExpand(false);
   };
 
   useEffect(() => {
-    setSideInfoBarClasses(`side-info-bar ${isExpand ? 'expand' : ''}`);
+    setSideBarClasses(`side-bar ${isExpand ? 'expand' : ''}`);
   }, [isExpand]);
 
   const soclialLinks = [
@@ -58,16 +58,12 @@ const SideInfoBar = () => {
   ];
 
   return (
-    <div className={sideInfoBarClasses}>
-      <Link
-        className="go-home-icon-link"
-        to="/"
-        onClick={() => closeSideInfoBar()}
-      >
+    <aside className={sideBarClasses}>
+      <Link className="go-home-icon-link" to="/" onClick={() => closeSideBar()}>
         <img className="go-home-icon-link__icon" src={HomeIcon} alt="Go home" />
       </Link>
 
-      <button type="button" className="toggle" onClick={toggleSideInfoBar}>
+      <button type="button" className="toggle" onClick={toggleSideBar}>
         <img
           className="icon-toggle"
           src={isExpand ? angleArrowDoubleRight : angleArrowDoubleRightLight}
@@ -97,7 +93,7 @@ const SideInfoBar = () => {
             key={link.name}
             className="info-nav__link"
             to={link.path}
-            onClick={() => closeSideInfoBar()}
+            onClick={() => closeSideBar()}
           >
             {link.meta.navText}
           </Link>
@@ -123,8 +119,8 @@ const SideInfoBar = () => {
           );
         })}
       </footer>
-    </div>
+    </aside>
   );
 };
 
-export default SideInfoBar;
+export default SideBar;

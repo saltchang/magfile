@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { string } from 'prop-types';
 
-import './TopHeader.scss';
+import './Header.scss';
 
 import DemoMainBannerImage from '../../images/demo/d-smoky-morning-in-Cascades.jpeg';
 
-const TopHeader = ({ headerTitle }: PropTypes) => {
+const Header = ({ headerTitle }: PropTypes) => {
   return (
     <header
-      className="top-header"
+      className="header"
       style={{ backgroundImage: `url(${DemoMainBannerImage})` }}
     >
       <div className="overlay">
@@ -27,12 +27,12 @@ interface PropTypes {
   headerTitle: string;
 }
 
-TopHeader.propTypes = {
+Header.propTypes = {
   headerTitle: string,
 };
 
-TopHeader.defaultProps = {
+Header.defaultProps = {
   headerTitle: '',
 };
 
-export default TopHeader;
+export default Header;

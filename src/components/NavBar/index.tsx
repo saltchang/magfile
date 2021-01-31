@@ -2,15 +2,15 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { navRoutes } from '../../router/routes';
 
-import './TopNavBar.scss';
+import './NavBar.scss';
 
-const TopNavBar = () => {
+const NavBar = () => {
   return (
-    <div className="top-nav-bar">
+    <nav className="nav-bar">
       <Link className="nav-brand" key="nav-brand" to="/">
         Hikaru Chang
       </Link>
-      <nav className="nav-link-container">
+      <div className="nav-link-container">
         {navRoutes.map((link) => (
           <Link
             key={link.meta.navText}
@@ -20,9 +20,9 @@ const TopNavBar = () => {
             {link.meta.navText}
           </Link>
         ))}
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 };
 
-export default TopNavBar;
+export default NavBar;
