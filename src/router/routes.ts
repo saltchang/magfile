@@ -11,7 +11,7 @@ const routes = [
     component: HomePage,
     exact: true,
     meta: {
-      headerTitle: 'MAGFILE',
+      headerTitle: 'Hikaru Chang',
       navText: 'Home',
       navigator: true,
     },

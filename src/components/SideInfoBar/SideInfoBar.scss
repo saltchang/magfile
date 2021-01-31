@@ -2,6 +2,7 @@
 
 .side-info-bar {
   --bar-width: 100%;
+  --max-bar-width: 375px;
   --icon-margin-t: var(--space-6);
   --icon-margin-x: var(--space-6);
   --avatar-size: 100px;
@@ -20,6 +21,7 @@
   left: calc(-1 * var(--bar-width));
   height: 100vh;
   width: var(--bar-width);
+  max-width: var(--max-bar-width);
   color: var(--color-text-primary);
   background: var(--color-header-bg);
   transition: var(--transition-left);
@@ -98,7 +100,7 @@
     }
   }
 
-  .info-menu-container {
+  .info-nav {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -109,10 +111,14 @@
     overflow-y: auto;
     padding: var(--space-5);
 
-    .page-link {
+    &__link {
       font-size: var(--size-ml);
       color: var(--color-text-secondary);
       text-decoration: none;
+
+      &:not(:last-of-type) {
+        margin-bottom: var(--space-6);
+      }
     }
   }
 
@@ -147,6 +153,9 @@
 
   .toggle {
     left: calc(var(--bar-width) - var(--icon-margin-x) * 2);
+    @media all and (min-width: 375px) {
+      left: calc(var(--max-bar-width) - var(--icon-margin-x) * 2);
+    }
 
     .icon-toggle {
       transform: rotateY(180deg);
@@ -157,9 +166,6 @@
 
 @include device.size(pad-v) {
   .side-info-bar {
-    // left: 0;
-    .toggle {
-      display: none;
-    }
+    display: none;
   }
 }

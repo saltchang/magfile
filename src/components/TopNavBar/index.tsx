@@ -8,7 +8,7 @@ const TopNavBar = () => {
   return (
     <div className="top-nav-bar">
       <Link className="nav-brand" key="nav-brand" to="/">
-        MAGFILE
+        Hikaru Chang
       </Link>
       <nav className="nav-link-container">
         {navRoutes.map((link) => (

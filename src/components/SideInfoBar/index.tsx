@@ -79,7 +79,7 @@ const SideInfoBar = () => {
         <div className="avatar">
           <img className="avatar__image" src={DemoAvatar} alt="avatar" />
         </div>
-        <div className="name">David Chang</div>
+        <div className="name">Hikaru Chang</div>
         <div className="title">Software Engineer</div>
         <TypingMotion
           typingStrings={[
@@ -91,11 +91,11 @@ const SideInfoBar = () => {
         <hr className="divider" />
       </header>
 
-      <nav className="info-menu-container">
+      <nav className="info-nav">
         {navRoutes.map((link) => (
           <Link
             key={link.name}
-            className="page-link"
+            className="info-nav__link"
             to={link.path}
             onClick={() => closeSideInfoBar()}
           >
