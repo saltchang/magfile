@@ -12,7 +12,7 @@
   color: white;
 }
 
-@include device.size(pad-v) {
+@include device.size(pad-h) {
   .home-page {
   }
 }
