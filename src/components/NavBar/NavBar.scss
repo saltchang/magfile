@@ -26,7 +26,7 @@
   }
 }
 
-@include device.size(pad-v) {
+@include device.size(pad-h) {
   .nav-bar {
     .nav-brand {
       right: auto;
