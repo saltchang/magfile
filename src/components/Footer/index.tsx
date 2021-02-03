@@ -1,10 +1,14 @@
-import * as React from 'react';
+import React, { RefObject } from 'react';
 
 import './Footer.scss';
 
-const Footer = () => {
+interface FooterProps {
+  footerRef: RefObject<HTMLDivElement>;
+}
+
+const Footer = ({ footerRef }: FooterProps) => {
   return (
-    <footer className="footer">
+    <footer ref={footerRef} className="footer">
       <div className="footer-container">
         <div className="content">Footer</div>
       </div>

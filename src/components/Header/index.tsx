@@ -1,13 +1,18 @@
-import * as React from 'react';
-import { string } from 'prop-types';
+import React, { RefObject } from 'react';
 
 import './Header.scss';
 
 import DemoMainBannerImage from '../../images/demo/d-smoky-morning-in-Cascades.jpeg';
 
-const Header = ({ headerTitle }: PropTypes) => {
+interface HeaderProps {
+  headerTitle: string;
+  headerRef: RefObject<HTMLDivElement>;
+}
+
+const Header = ({ headerTitle, headerRef }: HeaderProps) => {
   return (
     <header
+      ref={headerRef}
       className="header"
       style={{ backgroundImage: `url(${DemoMainBannerImage})` }}
     >
@@ -21,18 +26,6 @@ const Header = ({ headerTitle }: PropTypes) => {
       </div>
     </header>
   );
-};
-
-interface PropTypes {
-  headerTitle: string;
-}
-
-Header.propTypes = {
-  headerTitle: string,
-};
-
-Header.defaultProps = {
-  headerTitle: '',
 };
 
 export default Header;

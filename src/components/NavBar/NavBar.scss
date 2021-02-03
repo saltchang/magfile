@@ -15,6 +15,7 @@
 
   .nav-brand {
     position: absolute;
+    width: fit-content;
     right: var(--space-4);
     color: var(--color-header-logo);
     font-size: var(--size-l);
