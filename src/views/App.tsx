@@ -1,4 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  useLayoutEffect,
+  MutableRefObject,
+} from 'react';
 import { withRouter, useLocation } from 'react-router-dom';
 import { matchRoutes } from 'react-router-config';
 
@@ -19,9 +25,23 @@ const App = () => {
   const [appIsInDarkMode, setAppIsInDarkMode] = useState(true);
   const [appClassName, setAppClassName] = useState(`${app} ${lightMode}`);
   const [headerTitle, setHeaderTitle] = useState('');
+  const [footerHeight, setFooterHeight] = useState(0);
+  const [headerHeight, setHeaderHeight] = useState(0);
+
+  const header = useRef() as MutableRefObject<HTMLDivElement>;
+  const footer = useRef() as MutableRefObject<HTMLDivElement>;
 
   const location = useLocation();
   const matchedRoutes = matchRoutes(routes, location.pathname);
+
+  const updateSize = () => {
+    if (footer.current) {
+      setFooterHeight(footer.current.clientHeight);
+    }
+    if (header.current) {
+      setHeaderHeight(header.current.clientHeight);
+    }
+  };
 
   useEffect(() => {
     if (appIsInDarkMode) setAppIsInDarkMode(true);
@@ -31,15 +51,32 @@ const App = () => {
   useEffect(() => {
     setHeaderTitle(matchedRoutes[0].route.meta.headerTitle);
   }, [location]);
+
+  useEffect(() => {
+    updateSize();
+  });
+
+  useLayoutEffect(() => {
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+
   return (
     <div className={appClassName}>
       <NavBar />
       <SideBar />
-      <Header headerTitle={headerTitle} />
-      <main className="main-container">
+      <Header headerRef={header} headerTitle={headerTitle} />
+      <main
+        className="main-container"
+        style={{
+          paddingBottom: footerHeight,
+          minHeight: `calc(100vh - ${headerHeight}px - ${footerHeight}px)`,
+        }}
+      >
         <Router />
       </main>
-      <Footer />
+      <Footer footerRef={footer} />
     </div>
   );
 };

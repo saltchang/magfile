@@ -4,6 +4,9 @@
   color: var(--color-text-secondary);
   padding: 0 var(--space-10);
 
+  position: fixed;
+  bottom: 0;
+
   &-container {
     box-sizing: border-box;
     width: 100%;

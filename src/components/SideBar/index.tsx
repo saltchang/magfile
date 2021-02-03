@@ -76,12 +76,12 @@ const SideBar = () => {
           <img className="avatar__image" src={DemoAvatar} alt="avatar" />
         </div>
         <div className="name">Hikaru Chang</div>
-        <div className="title">Software Engineer</div>
+        <div className="title">Software Developer</div>
         <TypingMotion
           typingStrings={[
-            'a full-stack engineer.',
-            'a software developer.',
-            'a creator.',
+            'a Wandering Engineer.',
+            'a Developer for Fun.',
+            'a Ruthless Coding Robot.',
           ]}
         />
         <hr className="divider" />

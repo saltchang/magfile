@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { string, bool, arrayOf } from 'prop-types';
 
 import './TypingMotion.scss';
+
+interface TypingMotionProps {
+  withTag?: string;
+  codeStyle?: boolean;
+  baseText?: string;
+  typingStrings: string[];
+}
 
 const TypingMotion = ({
   withTag,
   codeStyle,
   baseText,
   typingStrings,
-}: PropTypes) => {
+}: TypingMotionProps) => {
   const originTypingTextClasses = 'text-cursor ';
   const sentenceCount = typingStrings.length;
   const initialTypingStringId = 0;
@@ -179,29 +185,10 @@ const TypingMotion = ({
   );
 };
 
-interface PropTypes {
-  withTag: string;
-  codeStyle: boolean;
-  baseText: string;
-  typingStrings: string[];
-}
-
-TypingMotion.propTypes = {
-  withTag: string,
-  codeStyle: bool,
-  baseText: string,
-  typingStrings: arrayOf(string),
-};
-
 TypingMotion.defaultProps = {
   withTag: 'div',
   codeStyle: true,
   baseText: 'I am ',
-  typingStrings: [
-    'a software engineer.',
-    'a full-stack developer.',
-    'a frontend engineer.',
-  ],
 };
 
 export default TypingMotion;
