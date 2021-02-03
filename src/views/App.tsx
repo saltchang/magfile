@@ -70,7 +70,6 @@ const App = () => {
       <main
         className="main-container"
         style={{
-          paddingBottom: footerHeight,
           minHeight: `calc(100vh - ${headerHeight}px - ${footerHeight}px)`,
         }}
       >
