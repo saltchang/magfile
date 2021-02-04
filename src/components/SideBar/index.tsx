@@ -59,10 +59,6 @@ const SideBar = () => {
 
   return (
     <aside className={sideBarClasses}>
-      <Link className="go-home-icon-link" to="/" onClick={() => closeSideBar()}>
-        <img className="go-home-icon-link__icon" src={HomeIcon} alt="Go home" />
-      </Link>
-
       <button type="button" className="toggle" onClick={toggleSideBar}>
         <img
           className="icon-toggle"
@@ -71,54 +67,68 @@ const SideBar = () => {
         />
       </button>
 
-      <header className="info-header">
-        <div className="avatar">
-          <img className="avatar__image" src={DemoAvatar} alt="avatar" />
-        </div>
-        <div className="name">Hikaru Chang</div>
-        <div className="title">Software Developer</div>
-        <TypingMotion
-          typingStrings={[
-            'a Wandering Engineer.',
-            'a Developer for Fun.',
-            'a Ruthless Coding Robot.',
-          ]}
-        />
-        <hr className="divider" />
-      </header>
+      <div className="side-bar-box">
+        <Link
+          className="go-home-icon-link"
+          to="/"
+          onClick={() => closeSideBar()}
+        >
+          <img
+            className="go-home-icon-link__icon"
+            src={HomeIcon}
+            alt="Go home"
+          />
+        </Link>
 
-      <nav className="info-nav">
-        {navRoutes.map((link) => (
-          <Link
-            key={link.name}
-            className="info-nav__link"
-            to={link.path}
-            onClick={() => closeSideBar()}
-          >
-            {link.meta.navText}
-          </Link>
-        ))}
-      </nav>
+        <header className="info-header">
+          <div className="avatar">
+            <img className="avatar__image" src={DemoAvatar} alt="avatar" />
+          </div>
+          <div className="name">Hikaru Chang</div>
+          <div className="title">Software Developer</div>
+          <TypingMotion
+            typingStrings={[
+              'a Wandering Engineer.',
+              'a Developer for Fun.',
+              'a Ruthless Coding Robot.',
+            ]}
+          />
+          <hr className="divider" />
+        </header>
 
-      <footer className="info-footer">
-        {soclialLinks.map((link) => {
-          return (
-            <a
+        <nav className="info-nav">
+          {navRoutes.map((link) => (
+            <Link
               key={link.name}
-              className="info-footer-link"
-              href={link.url}
-              target={link.newTab ? '_blank' : ''}
-              rel="noopener noreferrer"
+              className="info-nav__link"
+              to={link.path}
+              onClick={() => closeSideBar()}
             >
-              <img
-                className="info-footer-link__icon"
-                src={link.icon}
-                alt={link.name}
-              />
-            </a>
-          );
-        })}
-      </footer>
+              {link.meta.navText}
+            </Link>
+          ))}
+        </nav>
+
+        <footer className="info-footer">
+          {soclialLinks.map((link) => {
+            return (
+              <a
+                key={link.name}
+                className="info-footer-link"
+                href={link.url}
+                target={link.newTab ? '_blank' : ''}
+                rel="noopener noreferrer"
+              >
+                <img
+                  className="info-footer-link__icon"
+                  src={link.icon}
+                  alt={link.name}
+                />
+              </a>
+            );
+          })}
+        </footer>
+      </div>
     </aside>
   );
 };
