@@ -1,3 +1,38 @@
+@use '../../styles/devices' as device;
+
+.header {
+  --size-main-title: 50px;
+  --size-sub-title: 17px;
+}
+
+@include device.size(pad-v) {
+  .header {
+    --size-main-title: 60px;
+    --size-sub-title: 18px;
+  }
+}
+
+@include device.size(pad-h) {
+  .header {
+    --size-main-title: 70px;
+    --size-sub-title: 19px;
+  }
+}
+
+@include device.size(monitor) {
+  .header {
+    --size-main-title: 85px;
+    --size-sub-title: 19px;
+  }
+}
+
+@include device.size(largest) {
+  .header {
+    --size-main-title: 90px;
+    --size-sub-title: 20px;
+  }
+}
+
 .header {
   position: relative;
   background: no-repeat center center;
@@ -21,14 +56,14 @@
       text-shadow: 0 0 1rem black;
 
       &__title {
-        font-size: var(--size-main-header-title);
+        font-size: var(--size-main-title);
         margin-bottom: var(--space-4);
       }
 
       &__description {
         word-break: keep-all;
         font-weight: var(--font-light);
-        font-size: var(--size-sub-header-title);
+        font-size: var(--size-sub-title);
         margin-bottom: var(--space-1);
         color: var(--color-header-logo);
         line-height: 1.5rem;

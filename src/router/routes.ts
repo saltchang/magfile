@@ -11,7 +11,7 @@ const routes = [
     component: HomePage,
     exact: true,
     meta: {
-      headerTitle: 'Hikaru Chang',
+      headerTitle: 'Welcome',
       navText: 'Home',
       navigator: true,
     },
