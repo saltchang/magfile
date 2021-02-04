@@ -1,17 +1,40 @@
 @use '../../styles/devices' as device;
 
 .nav-bar {
-  position: absolute;
+  --nav-bar-height-mobile: 48px;
+  --nav-bar-height: 60px;
+}
+
+.nav-bar {
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
-  background: transparent;
+  background-color: transparent;
   padding: 0 var(--space-8);
-  height: 60px;
+  height: var(--nav-bar-height-mobile);
   display: flex;
   align-items: center;
   text-shadow: 0 0 0.8rem black;
+
+  transition: top 500ms ease-in-out;
+
+  .toggle {
+    position: absolute;
+    left: var(--space-4);
+    background: none;
+    transition: var(--transition-left);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon-toggle {
+      width: 14px;
+      transition: transform 500ms ease-in-out;
+      filter: drop-shadow(0 0 7px #000000);
+    }
+  }
 
   .nav-brand {
     position: absolute;
@@ -25,10 +48,20 @@
   .nav-link-container {
     display: none;
   }
+
+  &.hide {
+    top: calc(-1 * var(--nav-bar-height));
+  }
 }
 
 @include device.size(pad-h) {
   .nav-bar {
+    height: var(--nav-bar-height);
+
+    .toggle {
+      display: none;
+    }
+
     .nav-brand {
       right: auto;
       font-size: var(--size-ml);

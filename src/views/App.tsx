@@ -22,19 +22,45 @@ const App = () => {
   const app = 'app';
   const darkMode = 'dark-mode';
   const lightMode = 'light-mode';
+  const defaultSubTitle = '流浪的工程師 ‧ 興趣使然的開發者 ‧ 無情的寫扣機器人';
+
   const [appIsInDarkMode, setAppIsInDarkMode] = useState(true);
   const [appClassName, setAppClassName] = useState(`${app} ${lightMode}`);
   const [headerTitle, setHeaderTitle] = useState('');
+  const [subTitle, setSubTitle] = useState('');
   const [footerHeight, setFooterHeight] = useState(0);
   const [headerHeight, setHeaderHeight] = useState(0);
+  const [isSideBarShow, setIsSideBarShow] = useState(false);
 
+  const navbar = useRef() as MutableRefObject<HTMLDivElement>;
   const header = useRef() as MutableRefObject<HTMLDivElement>;
   const footer = useRef() as MutableRefObject<HTMLDivElement>;
 
   const location = useLocation();
   const matchedRoutes = matchRoutes(routes, location.pathname);
 
+  const setBodyScroll = (value: string) => {
+    document.body.style.overflowY = value;
+  };
+
+  const toggleAction = () => {
+    if (isSideBarShow) setBodyScroll('auto');
+    else setBodyScroll('hidden');
+
+    setIsSideBarShow(!isSideBarShow);
+  };
+
+  const closeSideBar = () => {
+    setBodyScroll('auto');
+    setIsSideBarShow(false);
+  };
+
   const updateSize = () => {
+    const vw = Math.max(
+      document.documentElement.clientWidth || 0,
+      window.innerWidth || 0,
+    );
+    if (vw >= 900) closeSideBar();
     if (footer.current) {
       setFooterHeight(footer.current.clientHeight);
     }
@@ -50,6 +76,7 @@ const App = () => {
 
   useEffect(() => {
     setHeaderTitle(matchedRoutes[0].route.meta.headerTitle);
+    setSubTitle(matchedRoutes[0].route.meta.subTitle || defaultSubTitle);
   }, [location]);
 
   useEffect(() => {
@@ -64,9 +91,13 @@ const App = () => {
 
   return (
     <div className={appClassName}>
-      <NavBar />
-      <SideBar />
-      <Header headerRef={header} headerTitle={headerTitle} />
+      <NavBar navBarRef={navbar} toggleAction={toggleAction} />
+      <SideBar show={isSideBarShow} toggleAction={toggleAction} />
+      <Header
+        headerRef={header}
+        headerTitle={headerTitle}
+        subTitle={subTitle}
+      />
       <main
         className="main-container"
         style={{

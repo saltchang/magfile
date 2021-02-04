@@ -6,10 +6,11 @@ import DemoMainBannerImage from '../../images/demo/d-smoky-morning-in-Cascades.j
 
 interface HeaderProps {
   headerTitle: string;
+  subTitle: string;
   headerRef: RefObject<HTMLDivElement>;
 }
 
-const Header = ({ headerTitle, headerRef }: HeaderProps) => {
+const Header = ({ headerTitle, subTitle, headerRef }: HeaderProps) => {
   return (
     <header
       ref={headerRef}
@@ -19,9 +20,7 @@ const Header = ({ headerTitle, headerRef }: HeaderProps) => {
       <div className="overlay">
         <div className="banner">
           <h1 className="banner__title">{headerTitle}</h1>
-          <span className="banner__description">
-            流浪的工程師 ‧ 興趣使然的開發者 ‧ 無情的寫扣機器人
-          </span>
+          <span className="banner__description">{subTitle}</span>
         </div>
       </div>
     </header>
