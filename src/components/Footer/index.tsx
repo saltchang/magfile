@@ -7,10 +7,11 @@ interface FooterProps {
 }
 
 const Footer = ({ footerRef }: FooterProps) => {
+  const defaultCopyRight = '© 2021 Salt Chang';
   return (
     <footer ref={footerRef} className="footer">
       <div className="footer-container">
-        <div className="content">Footer</div>
+        <div className="content">{defaultCopyRight}</div>
       </div>
     </footer>
   );
