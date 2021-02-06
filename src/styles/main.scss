@@ -35,47 +35,33 @@ code {
 }
 
 a,
-a:active,
+a:link,
+a:any-link,
 a:focus,
 a:focus-within,
-a:focus-visible,
 a:hover,
 a:visited,
 button,
 button:active,
 button:focus,
 button:focus-within,
-button:focus-visible,
 button:hover,
 button:visited,
 input,
 input:active,
 input:focus,
 input:focus-within,
-input:focus-visible,
 input:hover,
 input:visited,
 textarea,
 textarea:active,
 textarea:focus,
 textarea:focus-within,
-textarea:focus-visible,
 textarea:hover,
 textarea:visited {
   border: none;
   outline: none;
   box-shadow: none;
-  text-decoration: none;
-}
-
-// remove hightlight effect while a tag clicked
-a,
-a:active,
-a:focus,
-a:focus-within,
-a:focus-visible,
-a:hover,
-a:visited {
   color: var(--color-text-primary);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -84,4 +70,8 @@ a:visited {
   -ms-user-select: none;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-decoration: none;
 }
