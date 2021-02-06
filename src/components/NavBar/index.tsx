@@ -9,13 +9,15 @@ import iconMenuLight from '../../images/icons/links/i-menu-l.svg';
 interface NavBarProps {
   navBarRef: RefObject<HTMLDivElement>;
   toggleAction: () => void;
+  hiddenEffect: boolean;
 }
 
-const NavBar = ({ navBarRef, toggleAction }: NavBarProps) => {
+const NavBar = ({ navBarRef, toggleAction, hiddenEffect }: NavBarProps) => {
   const navBar = 'nav-bar ';
   const hide = 'hide ';
   const backgroundColorValue = '22, 27, 34';
   const topRange = 15;
+  const bottomRange = 40;
   const maxOpacity = 0.8;
   const [lastScrollY, setLastScrollY] = useState(window.scrollY);
   const [navBarClassName, setNavBarClassName] = useState(navBar);
@@ -26,9 +28,12 @@ const NavBar = ({ navBarRef, toggleAction }: NavBarProps) => {
   useLayoutEffect(() => {
     const handleScroll = () => {
       if (!navBarRef.current) return;
+      const appHeight = document.querySelector('#root')?.clientHeight || 0;
       const scrollInNavRange = navBarRef.current.clientHeight * 1.5;
       const isScrollOutOfNav = window.scrollY > scrollInNavRange;
       const scrollInTop = window.scrollY <= topRange;
+      const scrollInBottom =
+        window.scrollY + window.innerHeight >= appHeight - bottomRange;
       const isScrollInNav = !scrollInTop && window.scrollY <= scrollInNavRange;
       const scrollInNavRatio =
         ((window.scrollY - topRange) *
@@ -38,9 +43,11 @@ const NavBar = ({ navBarRef, toggleAction }: NavBarProps) => {
 
       setLastScrollY(window.scrollY);
 
-      if (scrollInTop) {
+      if (scrollInTop || !hiddenEffect) {
         setNavBarClassName(`${navBar}`);
         setBackgroundColor(`rgb(${backgroundColorValue}, 0)`);
+      } else if (scrollInBottom) {
+        setNavBarClassName(`${navBar}${hide}`);
       } else if (isScrollInNav) {
         setNavBarClassName(`${navBar}`);
         setBackgroundColor(
@@ -62,7 +69,7 @@ const NavBar = ({ navBarRef, toggleAction }: NavBarProps) => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY, backgroundColor]);
+  }, [lastScrollY, backgroundColor, hiddenEffect]);
 
   return (
     <nav

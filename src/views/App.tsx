@@ -31,6 +31,7 @@ const App = () => {
   const [footerHeight, setFooterHeight] = useState(0);
   const [headerHeight, setHeaderHeight] = useState(0);
   const [isSideBarShow, setIsSideBarShow] = useState(false);
+  const [navBarEffect, setNavBarEffect] = useState(false);
 
   const navbar = useRef() as MutableRefObject<HTMLDivElement>;
   const header = useRef() as MutableRefObject<HTMLDivElement>;
@@ -39,19 +40,19 @@ const App = () => {
   const location = useLocation();
   const matchedRoutes = matchRoutes(routes, location.pathname);
 
-  const setBodyScroll = (value: string) => {
-    document.body.style.overflowY = value;
+  const setAppScroll = (value: string) => {
+    document.body.style.overflow = value;
   };
 
   const toggleAction = () => {
-    if (isSideBarShow) setBodyScroll('auto');
-    else setBodyScroll('hidden');
+    if (isSideBarShow) setAppScroll('auto');
+    else setAppScroll('hidden');
 
     setIsSideBarShow(!isSideBarShow);
   };
 
   const closeSideBar = () => {
-    setBodyScroll('auto');
+    setAppScroll('auto');
     setIsSideBarShow(false);
   };
 
@@ -60,7 +61,12 @@ const App = () => {
       document.documentElement.clientWidth || 0,
       window.innerWidth || 0,
     );
-    if (vw >= 900) closeSideBar();
+    if (vw >= 900) {
+      closeSideBar();
+      setNavBarEffect(true);
+    } else {
+      setNavBarEffect(false);
+    }
     if (footer.current) {
       setFooterHeight(footer.current.clientHeight);
     }
@@ -91,7 +97,11 @@ const App = () => {
 
   return (
     <div className={appClassName}>
-      <NavBar navBarRef={navbar} toggleAction={toggleAction} />
+      <NavBar
+        navBarRef={navbar}
+        toggleAction={toggleAction}
+        hiddenEffect={navBarEffect}
+      />
       <SideBar show={isSideBarShow} toggleAction={toggleAction} />
       <Header
         headerRef={header}
