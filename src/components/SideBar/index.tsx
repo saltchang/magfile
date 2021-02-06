@@ -70,13 +70,35 @@ const SideBar = ({ show, toggleAction }: SideBarProps) => {
         </div>
         <div className="name">Hikaru Chang</div>
         <div className="title">Software Developer</div>
-        <TypingMotion
-          typingStrings={[
-            'a Wandering Engineer.',
-            'a Developer for Fun.',
-            'a Ruthless Coding Robot.',
-          ]}
-        />
+        <div className="typing-motion-container">
+          <TypingMotion
+            typingStrings={[
+              'a Wandering Engineer.',
+              'a Developer for Fun.',
+              'a Ruthless Coding Robot.',
+            ]}
+          />
+        </div>
+
+        <div className="personal-links">
+          {soclialLinks.map((link) => {
+            return (
+              <a
+                key={link.name}
+                className="personal-links-link"
+                href={link.url}
+                target={link.newTab ? '_blank' : ''}
+                rel="noopener noreferrer"
+              >
+                <img
+                  className="personal-links-link__icon"
+                  src={link.icon}
+                  alt={link.name}
+                />
+              </a>
+            );
+          })}
+        </div>
         <hr className="divider" />
       </header>
 
@@ -92,26 +114,7 @@ const SideBar = ({ show, toggleAction }: SideBarProps) => {
           </Link>
         ))}
       </nav>
-
-      <footer className="info-footer">
-        {soclialLinks.map((link) => {
-          return (
-            <a
-              key={link.name}
-              className="info-footer-link"
-              href={link.url}
-              target={link.newTab ? '_blank' : ''}
-              rel="noopener noreferrer"
-            >
-              <img
-                className="info-footer-link__icon"
-                src={link.icon}
-                alt={link.name}
-              />
-            </a>
-          );
-        })}
-      </footer>
+      <div className="info-footer" />
     </aside>
   );
 };

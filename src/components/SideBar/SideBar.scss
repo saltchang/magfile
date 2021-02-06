@@ -7,11 +7,19 @@
   --icon-margin-x: var(--space-5);
   --avatar-size: 100px;
 
-  --header-height: 300px;
-  --footer-height: 70px;
+  --header-height: 350px;
+  --footer-height: 60px;
   --content-height: calc(100vh - var(--header-height) - var(--footer-height));
 
   --transition-left: left 300ms ease-in-out;
+
+  --color-side-bar-background: linear-gradient(
+    180deg,
+    #37373ffa 0%,
+    var(--color-header-bg) 10%,
+    var(--color-header-bg) 90%,
+    #37373ffa 100%
+  );
 }
 
 .side-bar {
@@ -23,7 +31,7 @@
   width: var(--bar-width);
   max-width: var(--max-bar-width);
   color: var(--color-text-primary);
-  background: var(--color-header-bg);
+  background: var(--color-side-bar-background);
   transition: var(--transition-left);
 
   @media all and(max-width: 375px) {
@@ -84,15 +92,36 @@
 
     .title {
       font-size: var(--size-l);
-      color: var(--font-color-gray);
+      color: var(--color-text-gray);
       margin-bottom: var(--space-4);
     }
 
+    .typing-motion-container {
+      box-sizing: border-box;
+      height: calc(10px * 2 + 14px * 2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .personal-links {
+      box-sizing: border-box;
+      width: 100%;
+      padding: var(--space-4) var(--space-4);
+      background: var(--color-header-bg);
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      &-link {
+        &__icon {
+          width: 16px;
+        }
+      }
+    }
+
     hr.divider {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translate(-50%, 0);
       width: 80%;
       border: 0;
       height: 1px;
@@ -105,6 +134,14 @@
     }
   }
 
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #37373ffa;
+  }
+
   .info-nav {
     box-sizing: border-box;
     display: flex;
@@ -113,8 +150,9 @@
     align-items: center;
     box-sizing: border-box;
     height: var(--content-height);
-    overflow-y: auto;
+    overflow-y: scroll;
     padding: var(--space-5);
+    padding-bottom: var(--space-9);
 
     &__link {
       font-size: var(--size-ml);
@@ -128,23 +166,8 @@
   }
 
   .info-footer {
-    box-sizing: border-box;
-    position: absolute;
-    bottom: 0;
     width: 100%;
     height: var(--footer-height);
-    padding: var(--space-4) var(--space-8);
-    background: var(--gradient-up-dark-bg-color);
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    &-link {
-      &__icon {
-        width: 16px;
-      }
-    }
   }
 
   &.expand {
