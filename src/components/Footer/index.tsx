@@ -10,6 +10,7 @@ const Footer = ({ footerRef }: FooterProps) => {
   const defaultCopyRight = '© 2021 Salt Chang';
   return (
     <footer ref={footerRef} className="footer">
+      <hr className="divider" />
       <div className="footer-container">
         <div className="content">{defaultCopyRight}</div>
       </div>
