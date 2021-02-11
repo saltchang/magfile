@@ -2,19 +2,26 @@
 
 Simple and pretty personal website.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created with [Next.js](https://nextjs.org/)
 
 ## Setup & Run
+
+### Apple Silicon
+
+libvips must currently be installed via Homebrew before installing sharp.
+
+```bash
+brew install vips
+```
 
 - Install dependencies
 
 ```bash
-cd magfile
 yarn
 ```
 
 - Run local dev server
 
 ```bash
-yarn start
+yarn dev
 ```

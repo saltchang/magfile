@@ -1,0 +1,55 @@
+.typingMotion {
+  --cursor-color: #ffc107;
+  --tag-color: #ef596f;
+  --code-text-color: #d7d7d7;
+  --font-size: 13px;
+  --blink-time: 750ms;
+}
+
+.typingMotion {
+  font-size: var(--font-size);
+  display: flex;
+  padding: 10px;
+
+  &.code {
+    display: inline-block;
+    font-family: var(--code-font-family);
+    color: var(--code-text-color);
+  }
+
+  .tag {
+    .tagName {
+      color: var(--tag-color);
+    }
+  }
+
+  .typingText {
+    min-height: var(--font-size);
+    white-space: pre-wrap;
+    box-sizing: content-box;
+    display: inline-block;
+
+    .textCursor {
+      height: calc(var(--font-size) - 1px);
+      display: inline-block;
+      padding-top: 1px;
+      margin-left: 1px;
+      background: var(--cursor-color);
+
+      &.blink {
+        box-sizing: content-box;
+        animation: borderBlink var(--blink-time) step-end infinite;
+      }
+
+      @keyframes borderBlink {
+        from,
+        to {
+          background: var(--cursor-color);
+        }
+        50% {
+          background: transparent;
+        }
+      }
+    }
+  }
+}

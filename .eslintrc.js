@@ -3,6 +3,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
   extends: [
     'airbnb',
@@ -20,6 +21,9 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
+    'react/react-in-jsx-scope': 'off',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'jsx-a11y/anchor-is-valid': ['off'],
     'no-console': ['off'],
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
@@ -39,7 +43,9 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'no-unused-vars': ['warn'],
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': ['warn'],
+    'prettier/prettier': ['off'],
   },
   settings: {
     'import/resolver': {

@@ -1,0 +1,88 @@
+@use '../../styles/devices' as device;
+
+.navBar {
+  --nav-bar-height-mobile: 48px;
+  --nav-bar-height: 60px;
+}
+
+.navBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: transparent;
+  padding: 0 var(--space-8);
+  height: var(--nav-bar-height-mobile);
+  display: flex;
+  align-items: center;
+  text-shadow: 0 0 0.8rem black;
+
+  transition: top 500ms ease-in-out;
+
+  .toggle {
+    position: absolute;
+    left: var(--space-4);
+    background: none;
+    transition: var(--transition-left);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .iconToggle {
+      width: 14px;
+      transition: transform 500ms ease-in-out;
+      filter: drop-shadow(0 0 7px #000000);
+    }
+  }
+
+  .navBrand {
+    position: absolute;
+    width: fit-content;
+    right: var(--space-4);
+    color: var(--color-header-logo);
+    font-size: var(--size-l);
+    font-weight: var(--font-medium);
+  }
+
+  .navLinkContainer {
+    display: none;
+  }
+
+  &.hide {
+    top: calc(-1 * var(--nav-bar-height));
+  }
+}
+
+@include device.size(pad-h) {
+  .navBar {
+    position: fixed;
+    height: var(--nav-bar-height);
+
+    .toggle {
+      display: none;
+    }
+
+    .navBrand {
+      right: auto;
+      font-size: var(--size-ml);
+      font-weight: var(--font-bold);
+    }
+
+    .navLinkContainer {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      .navLinkItem {
+        color: var(--color-header-logo);
+        font-size: var(--size-l);
+        font-weight: var(--font-bold);
+        &:not(:last-of-type) {
+          margin-right: var(--space-8);
+        }
+      }
+    }
+  }
+}
