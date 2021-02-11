@@ -1,0 +1,106 @@
+@use '../../styles/devices' as device;
+
+.header {
+  --size-main-title: 45px;
+  --size-sub-title: 17px;
+  --padding-header: 70px 0 60px 0;
+  --padding-banner: 0 5%;
+  &.blog {
+    --size-main-title: 28px;
+    --size-sub-title: 14px;
+  }
+}
+
+@include device.size(pad-v) {
+  .header {
+    --size-main-title: 55px;
+    --size-sub-title: 18px;
+    --padding-header: 75px 0 65px 0;
+    --padding-banner: 0 7.5%;
+    &.blog {
+      --size-main-title: 36px;
+      --size-sub-title: 15px;
+    }
+  }
+}
+
+@include device.size(pad-h) {
+  .header {
+    --size-main-title: 70px;
+    --size-sub-title: 19px;
+    --padding-header: 80px 0 70px 0;
+    --padding-banner: 0 10%;
+    &.blog {
+      --size-main-title: 45px;
+      --size-sub-title: 16px;
+    }
+  }
+}
+
+@include device.size(monitor) {
+  .header {
+    --size-main-title: 80px;
+    --size-sub-title: 19px;
+    --padding-header: 90px 0 80px 0;
+    --padding-banner: 0 15%;
+    &.blog {
+      --size-main-title: 50px;
+      --size-sub-title: 17px;
+    }
+  }
+}
+
+@include device.size(largest) {
+  .header {
+    --size-main-title: 90px;
+    --size-sub-title: 20px;
+    --padding-header: 90px 0 80px 0;
+    --padding-banner: 0 15%;
+    &.blog {
+      --size-main-title: 55px;
+      --size-sub-title: 18px;
+    }
+  }
+}
+
+.header {
+  position: relative;
+  background: no-repeat center center;
+  background-color: gray;
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  margin-bottom: 0;
+
+  .overlay {
+    padding: var(--padding-header);
+    width: 100%;
+    height: 100%;
+    background-color: #00000023;
+
+    .banner {
+      text-align: center;
+      color: var(--color-header-logo);
+      text-shadow: 0 0 1rem black;
+      padding: var(--padding-banner);
+
+      &__title {
+        font-size: var(--size-main-title);
+        margin-bottom: var(--space-4);
+        font-weight: bold;
+      }
+
+      &__description {
+        word-break: keep-all;
+        font-weight: var(--font-light);
+        font-size: var(--size-sub-title);
+        margin-bottom: var(--space-1);
+        color: var(--color-header-logo);
+        line-height: 1.5rem;
+        padding: 0 var(--space-p-4);
+      }
+    }
+  }
+}
