@@ -8,18 +8,23 @@ const mockMdDir = path.join(process.cwd(), 'mock/md');
 export const getMockPosts = (): PostData[] => {
   // Get file names under /blog
   const fileNames = fs.readdirSync(mockMdDir);
+  let i = 0;
   const allPostsData = fileNames.map((fileName) => {
     // Read markdown file as string
     const fullPath = path.join(mockMdDir, fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
 
+    const id = i;
+    i += 1;
+    const semanticId = fileName.replace(/\.md$/, '');
+
     // MockData
     return {
-      id: 0,
-      semanticId: 'github-collaboration-quick-tutorial',
-      date: new Date('2020-07-14'),
+      id,
+      semanticId,
+      date: new Date(Date.now()),
       author: 'Salt Chang',
-      title: 'GitHub 協作流程快速教學',
+      title: semanticId,
       hashTag: ['GitHub', '協作', '開發'],
       content: fileContents,
     } as PostData;

@@ -1,23 +1,21 @@
-# GitHub 協作流程快速教學
-
 要如何參與 GitHub 上面開源專案的開發呢？  
 本篇文章提供一個快速教學讓大家參考。
 
 ## 開始參與開源專案的開發
 
-1. 從你想參與開發的專案 fork 程式碼庫到自己的 GitHub:  
+- 從你想參與開發的專案 fork 程式碼庫到自己的 GitHub:  
    (這裡以 Frontend 為範例專案)  
    點擊專案右上角的 Fork 按鈕:  
    ![fork](https://upload.wikimedia.org/wikipedia/commons/3/38/GitHub_Fork_Button.png)
 
-2. 從自己的 GitHub 將專案 Clone 下來:
+- 從自己的 GitHub 將專案 Clone 下來:
 
-   ```bash
-   git clone https://github.com/<你的GitHub帳號>/example-repo.git
-   cd example-repo
-   ```
+  ```bash
+  git clone https://github.com/<你的GitHub帳號>/example-repo.git
+  cd example-repo
+  ```
 
-3. 切換到專案開發的主分支:  
+1. 切換到專案開發的主分支:  
    注意到你所參與開發的專案是使用什麼開發流程。  
    ex. [GitHub Flow](https://medium.com/@trylovetom/%E8%AE%93%E6%88%91%E5%80%91%E4%BE%86%E4%BA%86%E8%A7%A3-github-flow-%E5%90%A7-4144caf1f1bf)  
    假設專案開發的主分支在 `develop`:
@@ -26,13 +24,13 @@
    git checkout develop
    ```
 
-4. 依照功能或開發項目從主分支建立一個新分支:
+2. 依照功能或開發項目從主分支建立一個新分支:
 
    ```bash
    git checkout -b feature/homepage
    ```
 
-5. 接者便可以開始進行開發，待開發完成之後，將程式碼 commit 並 push 到你自己的 Repository:
+3. 接者便可以開始進行開發，待開發完成之後，將程式碼 commit 並 push 到你自己的 Repository:
 
    ```bash
    git add .
@@ -46,17 +44,17 @@
    git push
    ```
 
-6. 回到你所參與的開源專案 GitHub 頁面
+4. 回到你所參與的開源專案 GitHub 頁面
 
-7. 點擊 **Compare & pull request**
+5. 點擊 **Compare & pull request**
 
    ![Compare & pull request](https://i.imgur.com/RgM2CLh.png)
 
-8. 確認資訊並填寫 PR 的訊息，接著送出:
+6. 確認資訊並填寫 PR 的訊息，接著送出:
 
    ![Create pull request](https://i.imgur.com/6Dby5ri.png)
 
-9. 看到下列頁面就完成了:
+7. 看到下列頁面就完成了:
 
    ![PR Created](https://i.imgur.com/2uN3Vr7.png)
 

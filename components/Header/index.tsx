@@ -21,8 +21,12 @@ const Header = ({ headerTitle, subTitle, headerRef, blog }: HeaderProps) => {
     >
       <div className={styles.overlay}>
         <div className={styles.banner}>
-          <h1 className={styles.banner__title}>{headerTitle}</h1>
-          <span className={styles.banner__description}>{subTitle}</span>
+          <div className={styles.bannerTitle}>
+            <h1 className={styles.bannerTitle__text}>{headerTitle}</h1>
+          </div>
+          <div className={styles.bannerDescription}>
+            <span className={styles.bannerDescription__text}>{subTitle}</span>
+          </div>
         </div>
       </div>
     </header>

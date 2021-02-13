@@ -155,7 +155,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
           minHeight: `calc(100vh - ${headerHeight}px - ${footerHeight}px)`,
         }}
       >
-        {children}
+        <div className={styles.mainContent}>{children}</div>
       </main>
       <Footer footerRef={footer} />
     </div>

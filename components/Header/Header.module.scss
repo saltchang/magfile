@@ -5,6 +5,8 @@
   --size-sub-title: 17px;
   --padding-header: 70px 0 60px 0;
   --padding-banner: 0 5%;
+  --max-width-banner: 600px;
+  --min-height: 240px;
   &.blog {
     --size-main-title: 28px;
     --size-sub-title: 14px;
@@ -16,7 +18,7 @@
     --size-main-title: 55px;
     --size-sub-title: 18px;
     --padding-header: 75px 0 65px 0;
-    --padding-banner: 0 7.5%;
+    --min-height: 320px;
     &.blog {
       --size-main-title: 36px;
       --size-sub-title: 15px;
@@ -29,7 +31,8 @@
     --size-main-title: 70px;
     --size-sub-title: 19px;
     --padding-header: 80px 0 70px 0;
-    --padding-banner: 0 10%;
+    --padding-banner: 0;
+    --min-height: 360px;
     &.blog {
       --size-main-title: 45px;
       --size-sub-title: 16px;
@@ -42,7 +45,8 @@
     --size-main-title: 80px;
     --size-sub-title: 19px;
     --padding-header: 90px 0 80px 0;
-    --padding-banner: 0 15%;
+    --max-width-banner: 750px;
+    --min-height: 400px;
     &.blog {
       --size-main-title: 50px;
       --size-sub-title: 17px;
@@ -55,7 +59,7 @@
     --size-main-title: 90px;
     --size-sub-title: 20px;
     --padding-header: 90px 0 80px 0;
-    --padding-banner: 0 15%;
+    --min-height: 480px;
     &.blog {
       --size-main-title: 55px;
       --size-sub-title: 18px;
@@ -79,27 +83,49 @@
     width: 100%;
     height: 100%;
     background-color: #00000023;
+    min-height: var(--min-height);
+    display: flex;
+    justify-content: center;
 
     .banner {
       text-align: center;
       color: var(--color-header-logo);
       text-shadow: 0 0 1rem black;
       padding: var(--padding-banner);
+      max-width: var(--max-width-banner);
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
 
-      &__title {
-        font-size: var(--size-main-title);
-        margin-bottom: var(--space-4);
-        font-weight: bold;
+      .bannerTitle {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        &__text {
+          text-align: left;
+          font-size: var(--size-main-title);
+          line-height: 1.2;
+          margin-bottom: var(--space-4);
+          font-weight: bold;
+        }
       }
 
-      &__description {
-        word-break: keep-all;
-        font-weight: var(--font-light);
-        font-size: var(--size-sub-title);
-        margin-bottom: var(--space-1);
-        color: var(--color-header-logo);
-        line-height: 1.5rem;
-        padding: 0 var(--space-p-4);
+      .bannerDescription {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        &__text {
+          text-align: center;
+          word-break: keep-all;
+          font-weight: var(--font-light);
+          font-size: var(--size-sub-title);
+          margin-bottom: var(--space-1);
+          color: var(--color-header-logo);
+          line-height: 1.5rem;
+          // padding: 0 var(--space-p-4);
+        }
       }
     }
   }

@@ -87,7 +87,7 @@ const SideBar = ({ show, toggleAction, typingStrings }: SideBarProps) => {
         <div className={styles.avatar}>
           <img className={styles.avatar__image} src={DemoAvatar} alt="avatar" />
         </div>
-        <div className={styles.name}>Hikaru Chang</div>
+        <div className={styles.name}>Salt Chang</div>
         <div className={styles.title}>Software Developer</div>
         <div className={styles.typingMotionContainer}>
           <TypingMotion typingStrings={typingStrings} />

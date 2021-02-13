@@ -15,14 +15,14 @@ const routes = [
       navigator: true,
     },
   },
-  {
-    path: '/resume',
-    meta: {
-      headerTitle: 'Resume',
-      navText: 'Resume',
-      navigator: true,
-    },
-  },
+  // {
+  //   path: '/resume',
+  //   meta: {
+  //     headerTitle: 'Resume',
+  //     navText: 'Resume',
+  //     navigator: true,
+  //   },
+  // },
 ];
 
 export default routes;

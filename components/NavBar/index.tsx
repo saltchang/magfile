@@ -85,7 +85,7 @@ const NavBar = ({ navBarRef, toggleAction, hiddenEffect }: NavBarProps) => {
       </button>
 
       <Link href="/">
-        <a className={styles.navBrand}>Hikaru Chang</a>
+        <a className={styles.navBrand}>Salt Chang</a>
       </Link>
       <div className={styles.navLinkContainer}>
         {navRoutes.map((link) => (
