@@ -1,5 +1,7 @@
 import { RefObject } from 'react';
 import cx from 'classnames';
+import { MetaData } from '../../lib/getMeta';
+import { formatArticleDate } from '../../lib/date';
 
 import styles from './Header.module.scss';
 
@@ -8,11 +10,18 @@ const DemoMainBannerImage = '/images/demo/d-smoky-morning-in-Cascades.jpeg';
 interface HeaderProps {
   headerTitle: string;
   subTitle: string;
+  meta?: MetaData;
   headerRef: RefObject<HTMLDivElement>;
   blog?: boolean;
 }
 
-const Header = ({ headerTitle, subTitle, headerRef, blog }: HeaderProps) => {
+const Header = ({
+  headerTitle,
+  subTitle,
+  meta,
+  headerRef,
+  blog,
+}: HeaderProps) => {
   return (
     <header
       ref={headerRef}
@@ -26,7 +35,9 @@ const Header = ({ headerTitle, subTitle, headerRef, blog }: HeaderProps) => {
           </div>
           {blog ? (
             <div className={styles.bannerBlogMeta}>
-              <span className={styles.bannerBlogMeta__date}>Feb 14, 2020</span>
+              <span className={styles.bannerBlogMeta__date}>
+                {formatArticleDate(meta.date)}
+              </span>
             </div>
           ) : (
             <div className={styles.bannerDescription}>
@@ -41,6 +52,7 @@ const Header = ({ headerTitle, subTitle, headerRef, blog }: HeaderProps) => {
 
 Header.defaultProps = {
   blog: false,
+  meta: { date: 'no-date' },
 };
 
 export default Header;

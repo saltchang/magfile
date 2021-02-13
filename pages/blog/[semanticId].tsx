@@ -13,13 +13,14 @@ import {
   getBlogDataById,
   getAllPostIds,
   getIdBySemanticId,
+  PostData,
 } from '../../lib/blog';
 
 import markDownDark from '../../styles/markdown/dark.module.scss';
 import styles from './blogArticle.module.scss';
 
 export default function Post({ postData }: { postData: string }) {
-  const innerPostData = JSON.parse(postData);
+  const innerPostData = JSON.parse(postData) as PostData;
   const [reactContent, setMarkdownSource] = useRemark({
     remarkPlugins: [gfm, highlight, emoji, gemoji, slug],
   });
@@ -56,6 +57,7 @@ export default function Post({ postData }: { postData: string }) {
     <Layout>
       <Head>
         <title>{innerPostData.title}</title>
+        <meta name="date" content={innerPostData.date} />
       </Head>
       <article
         className={cx(markDownDark.markdownDarkMode, styles.blogArticle)}

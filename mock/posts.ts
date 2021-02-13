@@ -22,14 +22,13 @@ export const getMockPosts = (): PostData[] => {
     return {
       id,
       semanticId,
-      date: new Date(Date.now()),
+      date: new Date(Date.now() - (id + 1) * 86400 * 30 * 1000).toISOString(),
       author: 'Salt Chang',
       title: semanticId,
       hashTag: ['GitHub', '協作', '開發'],
       content: fileContents,
     } as PostData;
   });
-  // Sort blog by date
   return allPostsData;
 };
 

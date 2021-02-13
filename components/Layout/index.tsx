@@ -7,7 +7,7 @@ import {
 } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { getTitle } from '../../lib/getMeta';
+import { getTitle, getArticleDate, MetaData } from '../../lib/getMeta';
 
 import NavBar from '../NavBar';
 import SideBar from '../SideBar';
@@ -32,6 +32,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
   const [appIsInDarkMode, setAppIsInDarkMode] = useState(true);
   const [appClassName, setAppClassName] = useState(`${app} ${lightMode}`);
   const [headerTitle, setHeaderTitle] = useState('');
+  const [metaData, setMetaData] = useState(null as MetaData);
   const [subTitle, setSubTitle] = useState('');
   const [isBlogPage, setIsBlogPage] = useState(false);
   const [footerHeight, setFooterHeight] = useState(0);
@@ -48,9 +49,11 @@ const Layout = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     setIsBlogPage(router.asPath.includes('blog'));
     setHeaderTitle(getTitle());
+    setMetaData({ date: getArticleDate() } as MetaData);
     setSubTitle(defaultSubTitle);
     const handleRouteChange = () => {
       setHeaderTitle(getTitle());
+      setMetaData({ date: getArticleDate() } as MetaData);
     };
     const handleRouteChangeError = (err, url) => {
       if (err.cancelled) {
@@ -147,6 +150,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         headerRef={header}
         headerTitle={headerTitle}
         subTitle={subTitle}
+        meta={metaData}
         blog={isBlogPage}
       />
       <main

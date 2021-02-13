@@ -3,7 +3,7 @@ import { getMockPosts, getMockPostIds } from '../mock/posts';
 export interface PostData {
   id: number;
   semanticId: string;
-  date: Date;
+  date: string;
   author: string;
   title: string;
   hashTag: string[];

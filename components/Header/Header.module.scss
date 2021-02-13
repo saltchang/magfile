@@ -120,7 +120,7 @@
         text-align: left;
         font-size: var(--size-meta);
         &__date {
-          // font-style: italic;
+          margin-left: 0.3rem;
           font-family: 'Antic Slab', 'Noto Serif TC', serif;
         }
       }
