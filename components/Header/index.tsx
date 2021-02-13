@@ -24,9 +24,15 @@ const Header = ({ headerTitle, subTitle, headerRef, blog }: HeaderProps) => {
           <div className={styles.bannerTitle}>
             <h1 className={styles.bannerTitle__text}>{headerTitle}</h1>
           </div>
-          <div className={styles.bannerDescription}>
-            <span className={styles.bannerDescription__text}>{subTitle}</span>
-          </div>
+          {blog ? (
+            <div className={styles.bannerBlogMeta}>
+              <span className={styles.bannerBlogMeta__date}>Feb 14, 2020</span>
+            </div>
+          ) : (
+            <div className={styles.bannerDescription}>
+              <span className={styles.bannerDescription__text}>{subTitle}</span>
+            </div>
+          )}
         </div>
       </div>
     </header>

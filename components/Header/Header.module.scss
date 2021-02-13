@@ -10,6 +10,7 @@
   &.blog {
     --size-main-title: 28px;
     --size-sub-title: 14px;
+    --size-meta: 18px;
   }
 }
 
@@ -22,6 +23,7 @@
     &.blog {
       --size-main-title: 36px;
       --size-sub-title: 15px;
+      --size-meta: 20px;
     }
   }
 }
@@ -109,6 +111,17 @@
           line-height: 1.2;
           margin-bottom: var(--space-4);
           font-weight: bold;
+        }
+      }
+
+      .bannerBlogMeta {
+        width: 100%;
+        margin: 0 auto;
+        text-align: left;
+        font-size: var(--size-meta);
+        &__date {
+          // font-style: italic;
+          font-family: 'Antic Slab', 'Noto Serif TC', serif;
         }
       }
 
